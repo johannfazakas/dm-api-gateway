@@ -1,0 +1,9 @@
+spring.application.name: dm-api-gateway
+server.port: 9000
+zuul:
+  routes:
+    dm-account-service:
+      path: /api/account/**
+      serviceId: dm-account-service
+      stripPrefix: false
+      url: http://localhost:9010
